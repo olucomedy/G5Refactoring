@@ -171,8 +171,8 @@ public class LaneView implements LaneObserver, ActionListener {
 	public void displayScore(LaneEvent le, int numBowlers) {
 		int[][] lescores = le.getCumulScore();
 		for (int k = 0; k < numBowlers; k++) {
-			for (int i = 1; i <= le.getFrameNum(); i++) {
-
+			for (int i = 0; i <= le.getFrameNum()-1; i++) {
+				if (lescores[k][i] != 0)
 				scoreLabel[k][i].setText(
 						(new Integer(lescores[k][i])).toString());
 			}
