@@ -290,41 +290,31 @@ public class Lane extends Thread implements PinsetterObserver {
 	 */
 	public void receivePinsetterEvent(PinsetterEvent pe) {
 		
-			if (pe.pinsDownOnThisThrow() >=  0) {			// this is a real throw
-				markScore(currentThrower, frameNumber + 1, pe.getThrowNumber(), pe.pinsDownOnThisThrow());
-	
-				// next logic handles the ?: what conditions dont allow them another throw?
-				// handle the case of 10th frame first
-				if (frameNumber == 9) {
-					if (pe.totalPinsDown() == 10) {
-						setter.resetPins();
-						if(pe.getThrowNumber() == 1) {
-							tenthFrameStrike = true;
-						}
+		if (pe.pinsDownOnThisThrow() >=  0) {            // this is a real throw
+			markScore(currentThrower, frameNumber + 1, pe.getThrowNumber(), pe.pinsDownOnThisThrow());
+
+			// next logic handles the ?: what conditions dont allow them another throw?
+			// handle the case of 10th frame first
+			if (frameNumber == 9) {
+				if (pe.totalPinsDown() == 10) {
+					setter.resetPins();
+					if (pe.getThrowNumber() == 1) {
+						tenthFrameStrike = true;
 					}
-				
-					if ((pe.totalPinsDown() != 10) && (pe.getThrowNumber() == 2 && !tenthFrameStrike)) {
-						canThrowAgain = false;
-						//publish( lanePublish() );
-					}
-				
-					if (pe.getThrowNumber() == 3) {
-						canThrowAgain = false;
-						//publish( lanePublish() );
-					}
-				} else { // its not the 10th frame
-			
-					if (pe.pinsDownOnThisThrow() == 10) {		// threw a strike
-						canThrowAgain = false;
-						//publish( lanePublish() );
-					} else if (pe.getThrowNumber() == 2) {
-						canThrowAgain = false;
-						//publish( lanePublish() );
-					} else if (pe.getThrowNumber() == 3)  
-						System.out.println("I'm here...");
 				}
-			} else {								//  this is not a real throw, probably a reset
+
+				if (((pe.totalPinsDown() != 10) && (pe.getThrowNumber() == 2
+						&& !tenthFrameStrike)) || pe.getThrowNumber() == 3) {
+					canThrowAgain = false;
+				}
+
+			} else { // its not the 10th frame
+
+				if (pe.pinsDownOnThisThrow() == 10 || pe.getThrowNumber() == 2) {    // threw a strike or second throw
+					canThrowAgain = false;
+				}
 			}
+		}
 	}
 	
 	/** resetBowlerIterator()
@@ -355,9 +345,7 @@ public class Lane extends Thread implements PinsetterObserver {
 			}
 			scores.put( bowlIt.next(), toPut );
 		}
-		
-		
-		
+
 		gameFinished = false;
 		frameNumber = 0;
 	}
@@ -415,8 +403,6 @@ public class Lane extends Thread implements PinsetterObserver {
 	private LaneEvent lanePublish(  ) {
 		return new LaneEvent(party, bowlIndex, currentThrower, cumulScores, scores, frameNumber+1, curScores, ball, gameIsHalted);
 	}
-
-
 
 	/** isPartyAssigned()
 	 * 
