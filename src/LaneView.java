@@ -168,45 +168,47 @@ public class LaneView implements LaneObserver, ActionListener {
 		frame.pack();
 	}
 
-	public void displayScore(LaneEvent le, int numBowlers){
+	public void displayScore(LaneEvent le, int numBowlers) {
 		int[][] lescores = le.getCumulScore();
 		for (int k = 0; k < numBowlers; k++) {
-			for (int i = 0; i <= le.getFrameNum() - 1; i++) {
-				if (lescores[k][i] != 0)
-					scoreLabel[k][i].setText(
-							(new Integer(lescores[k][i])).toString());
+			for (int i = 1; i <= le.getFrameNum(); i++) {
+
+				scoreLabel[k][i].setText(
+						(new Integer(lescores[k][i])).toString());
 			}
 			for (int i = 0; i < 21; i++) {
-				if (((int[]) ((HashMap) le.getScore())
-						.get(bowlers.get(k)))[i]
-						!= -1)
-					if (((int[]) ((HashMap) le.getScore())
-							.get(bowlers.get(k)))[i]
-							== 10
-							&& (i % 2 == 0 || i == 19))
-						ballLabel[k][i].setText("X");
-					else if (
-							i > 0
-									&& ((int[]) ((HashMap) le.getScore())
-									.get(bowlers.get(k)))[i]
-									+ ((int[]) ((HashMap) le.getScore())
-									.get(bowlers.get(k)))[i
-									- 1]
-									== 10
-									&& i % 2 == 1)
-						ballLabel[k][i].setText("/");
-					else if ( ((int[])((HashMap) le.getScore()).get(bowlers.get(k)))[i] == -2 ){
-
-						ballLabel[k][i].setText("F");
-					} else
-						ballLabel[k][i].setText(
-								(new Integer(((int[]) ((HashMap) le.getScore())
-										.get(bowlers.get(k)))[i]))
-										.toString());
+				BowlingValue(le, numBowlers, i, k);
 			}
 		}
 	}
+	public void BowlingValue(LaneEvent le, int numBowlers, int i, int k){
+		if (((int[]) ((HashMap) le.getScore())
+				.get(bowlers.get(k)))[i]
+				!= -1)
+			if (((int[]) ((HashMap) le.getScore())
+					.get(bowlers.get(k)))[i]
+					== 10
+					&& (i % 2 == 0 || i == 19))
+				ballLabel[k][i].setText("X");
+			else if (
+					i > 0
+							&& ((int[]) ((HashMap) le.getScore())
+							.get(bowlers.get(k)))[i]
+							+ ((int[]) ((HashMap) le.getScore())
+							.get(bowlers.get(k)))[i
+							- 1]
+							== 10
+							&& i % 2 == 1)
+				ballLabel[k][i].setText("/");
+			else if ( ((int[])((HashMap) le.getScore()).get(bowlers.get(k)))[i] == -2 ){
 
+				ballLabel[k][i].setText("F");
+			} else
+				ballLabel[k][i].setText(
+						(new Integer(((int[]) ((HashMap) le.getScore())
+								.get(bowlers.get(k)))[i]))
+								.toString());
+	}
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(maintenance)) {
