@@ -1,0 +1,146 @@
+commit 2150eb48fd934c0fbcd0bf05fbc723355f16e360
+Author: blankzero <oxc9547@rit.edu>
+Date:   Mon Apr 23 08:51:49 2018 -0400
+
+    I fixed the bug of laneview displaying score incorrectly
+
+commit 227f29fe40b8a236c43c2d9849312a7184426c19
+Author: blankzero <oxc9547@rit.edu>
+Date:   Mon Apr 23 08:44:06 2018 -0400
+
+    commented
+
+commit 22ac528d89fc797c2916b26e5263724e64dd18d5
+Author: Nicholas Valletta <nxv7610@g.rit.edu>
+Date:   Mon Apr 23 00:22:20 2018 -0400
+
+    updated Lane to what it wsa before
+
+commit f4751de80796f920fb95890e03c710a80f69bf78
+Merge: 1536921 ed3e28f
+Author: Nicholas Valletta <nxv7610@g.rit.edu>
+Date:   Mon Apr 23 00:19:07 2018 -0400
+
+    Merge branch 'LaneRefactoring' of https://github.com/olucomedy/G5Refactoring into LaneRefactoring
+
+commit 153692184fb46ce97b62177fd6fff8619fe5a711
+Author: Nicholas Valletta <nxv7610@g.rit.edu>
+Date:   Mon Apr 23 00:03:55 2018 -0400
+
+    updated .gitignore
+
+commit ed3e28fa8a97af1a3764c21cadd7fe5200cff65c
+Author: InchwormFancy <nxv7610@g.rit.edu>
+Date:   Sun Apr 22 23:48:16 2018 -0400
+
+    Delete vcs.xml
+
+commit cb801e93c20cd5203700c870873c44b182664d3d
+Author: InchwormFancy <nxv7610@g.rit.edu>
+Date:   Sun Apr 22 23:48:09 2018 -0400
+
+    Delete preferred-vcs.xml
+
+commit a7b1a7622cbc9dbdbc16b10d40b162b5d8d16d5a
+Author: InchwormFancy <nxv7610@g.rit.edu>
+Date:   Sun Apr 22 23:48:02 2018 -0400
+
+    Delete modules.xml
+
+commit ef3591d65276c203714ff2c63332debf6da94318
+Author: InchwormFancy <nxv7610@g.rit.edu>
+Date:   Sun Apr 22 23:47:54 2018 -0400
+
+    Delete misc.xml
+
+commit 1e4cc69d862ea2e8985fb685f96f90285a7d562c
+Author: InchwormFancy <nxv7610@g.rit.edu>
+Date:   Sun Apr 22 23:47:43 2018 -0400
+
+    Delete G5Refactoring.iml
+
+commit eb0ac19b2609ac89d9b3fe80a07c6dd2309e909f
+Author: Nicholas Valletta <nxv7610@g.rit.edu>
+Date:   Sun Apr 22 23:45:48 2018 -0400
+
+    Simplified more of the lane class and moved another method to the Scoring class
+
+commit 6b7c07561a25f3e7490bb1e35763960ec3cb1c9a
+Author: Nicholas Valletta <nxv7610@g.rit.edu>
+Date:   Sun Apr 22 21:18:01 2018 -0400
+
+    Simplified receivePinsetterEvent
+
+commit 2f649f90c946c3938f5a5fd31f2cbce39091db4b
+Author: Nicholas Valletta <nxv7610@g.rit.edu>
+Date:   Sun Apr 22 20:52:39 2018 -0400
+
+    Moved the scoring method to its own class and did some simplifying with the Lane class
+
+commit b7cf08705c4df43e7b1fa9efa7f2e28403fd8092
+Author: InchwormFancy <nxv7610@g.rit.edu>
+Date:   Fri Apr 20 15:28:10 2018 -0400
+
+    Delete vcs.xml
+
+commit eee4e7017c8d8c6bfc368d0378c73a6321db4bbd
+Author: InchwormFancy <nxv7610@g.rit.edu>
+Date:   Fri Apr 20 15:28:03 2018 -0400
+
+    Delete preferred-vcs.xml
+
+commit 8b4a811db3ab64f8e2d23b354a1ef4eb7dbf24eb
+Author: InchwormFancy <nxv7610@g.rit.edu>
+Date:   Fri Apr 20 15:27:55 2018 -0400
+
+    Delete modules.xml
+
+commit 6585022d3be717a6c7c4003e5e2f91fe5e580767
+Author: InchwormFancy <nxv7610@g.rit.edu>
+Date:   Fri Apr 20 15:27:47 2018 -0400
+
+    Delete misc.xml
+
+commit a851c13021f7eed3f1a19d8ebb4edb0ddae71b31
+Author: InchwormFancy <nxv7610@g.rit.edu>
+Date:   Fri Apr 20 15:27:39 2018 -0400
+
+    Delete G5Refactoring.iml
+
+commit e2ec5b45e4d5519d133833212981f83d63bfa1b5
+Author: InchwormFancy <nxv7610@g.rit.edu>
+Date:   Fri Apr 20 15:25:39 2018 -0400
+
+    fixed gitignore
+
+commit 22110f7b226dbc5a019514bb0dde24203b3a146c
+Author: ptbud <ptbudd@gmail.com>
+Date:   Fri Apr 20 15:19:20 2018 -0400
+
+    Inline Refactoring
+
+commit e1ad47fb203b355a0a6d2063e8124c182689acc9
+Author: InchwormFancy <nxv7610@g.rit.edu>
+Date:   Wed Apr 18 15:04:52 2018 -0400
+
+    Created gitignore
+    
+    to fix common intellij problems that occur.
+
+commit 50ced32758ef16c274393d0abaa79c3089d2fd0a
+Author: blankzero <oxc9547@rit.edu>
+Date:   Tue Apr 10 16:42:43 2018 -0400
+
+    All of the files in the src are added
+
+commit 2e1e655c994033ae955dd65b6ee009c07de3e8a1
+Author: olucomedy <32279320+olucomedy@users.noreply.github.com>
+Date:   Tue Apr 10 16:39:43 2018 -0400
+
+    Add files via upload
+
+commit fdbebfd840ec1dbc4774d81a8e7f27620440ecb6
+Author: olucomedy <32279320+olucomedy@users.noreply.github.com>
+Date:   Tue Apr 10 16:37:58 2018 -0400
+
+    Initial commit
