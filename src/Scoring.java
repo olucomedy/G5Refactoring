@@ -1,6 +1,8 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
-public class Scoring {
+class Scoring {
 
 
     /** getScore()
@@ -12,7 +14,7 @@ public class Scoring {
      *
      * @return			The bowlers total score
      */
-     static int getScore(Bowler Cur, int frame, HashMap scores, int[][] cumulScores, int bowlIndex, int ball) {
+    static int getScore(Bowler Cur, int frame, HashMap scores, int[][] cumulScores, int bowlIndex, int ball) {
         int[] curScore;
         int strikeballs = 0;
         int totalScore = 0;
@@ -116,6 +118,17 @@ public class Scoring {
             }
         }
         return totalScore;
+    }
+
+    static void addScoreHistory(Bowler currentThrower, int[][] cumulScores, int bowlIndex) {
+        try {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm MM/dd/yyyy");
+            String dateString = simpleDateFormat.format(new Date());
+
+            ScoreHistoryFile.addScore(currentThrower.getNick(), dateString, Integer.toString(cumulScores[bowlIndex][9]));
+        } catch (Exception e) {
+            System.err.println("Exception in addScore. " + e);
+        }
     }
 }
 
