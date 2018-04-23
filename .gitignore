@@ -16,7 +16,6 @@
 *.jar
 *.war
 *.ear
-*.zip
 *.tar.gz
 *.rar
 
@@ -76,3 +75,7 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+G5Refactoring.iml
